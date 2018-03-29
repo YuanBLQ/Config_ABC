@@ -2,6 +2,7 @@
 whereis wget >/dev/null 2>&1
 if [ $? == 0 ]; then
 	echo 'downloading timezone file...'
+        mkdir -p /usr/share/zoneinfo/Asia/
 	wget -O /usr/share/zoneinfo/Asia/Shanghai https://github.com/YuanBLQ/Config_ABC/blob/master/Environment/Shanghai?raw=true
 	echo 'changing timezone...'
 	ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
